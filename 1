@@ -1,0 +1,51 @@
+list1=[]
+n = int(input("number of students="))
+for i in range(n):
+    x=int(input("enter marks="))
+    list1.append(x)
+print("marks entered=",list1)
+
+
+def maxmarks(list1,n):
+    max1=0
+    for i in range(n):
+        if max1<list1[i]:
+            max1=list1[i]
+    return max1
+
+
+def minmarks(list1,n):
+    min1=list1[0]
+    for i in range(n):
+        if min1>list1[i]:
+            min1=list1[i]
+    return min1
+
+def avg(list1,n):
+    q=0
+    for i in range(n):
+        q=q+list1[i]
+    avg=q/n
+    return avg
+
+
+def highfreq(list1,n):
+    b = 0
+    temp = 0
+    for i in range(n):
+        a = 0
+        for j in range(n):
+            if list1[i] == list1[j]:
+                a = a + 1
+                if a > b:
+                    b = a
+                    temp = list1[i]
+                else:
+                    continue
+
+    return temp
+
+print("average marks=",avg(list1,n))
+print("highest score=",maxmarks(list1,n))
+print("lowest score=",minmarks(list1,n))
+print("maks with highest frequency=", highfreq(list1,n))
